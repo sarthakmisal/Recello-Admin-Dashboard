@@ -18,7 +18,7 @@ const AddProducts = React.lazy(() => import('./views/pages/products/AddProducts'
 const BrandModelManager = React.lazy(() => import('./views/pages/system/BrandModelManager'));
 const QuickSell = React.lazy(() => import('./views/pages/system/QuickSell'));
 const SellQuestions = React.lazy(() => import('./views/pages/sell/SellQuestions'));
-const ContactUs = React.lazy(() => import('./views/pages/contacts/ContactUs'));
+const Reviews = React.lazy(() => import('./views/pages/reviews/Reviews'));
 // const HomeBanner = React.lazy(() => import('./views/pages/banners/HomeBanner'));
 
 // BANNERS
@@ -123,8 +123,8 @@ const routes = [
   { path: '/faqs/edit/:id', name: 'Edit FAQ', element: EditFaq },
   { path: '/theme/test', name: 'Test Theme', element: TestTheme },
 
-  // Contact Us
-  { path: '/contact_us', name: 'Contact Us', element: ContactUs },
+  // Reviews (customer reviews shown on the site — backed by the contact_us table)
+  { path: '/reviews', name: 'Reviews', element: Reviews },
 
   { path: '/theme', name: 'Theme', element: TestTheme, exact: true },
   { path: '/theme/colors', name: 'Colors', element: TestTheme },

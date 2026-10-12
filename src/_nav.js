@@ -59,7 +59,7 @@ const _nav = [
   },
   {
     component: CNavItem,
-    name: 'Transfer Leads',
+    name: 'All Leads',
     to: '/leads',
     icon: <CIcon icon={cilTransfer} customClassName="nav-icon" />,
   },
@@ -218,13 +218,13 @@ const _nav = [
   },
   {
     component: CNavGroup,
-    name: 'Contact Us',
+    name: 'Reviews',
     icon: <CIcon icon={cilStar} customClassName="nav-icon" />,
     items: [
       {
         component: CNavItem,
-        name: 'Manage',
-        to: '/contact_us',
+        name: 'Manage Reviews',
+        to: '/reviews',
       },
     ],
   },

@@ -217,6 +217,18 @@ const Listings = () => {
                 },
             ]
             : []),
+        ...(tab === 'completed'
+            ? [
+                {
+                    key: 'completed_by',
+                    label: 'Completed By',
+                    render: (item) =>
+                        item.completed_by_first_name
+                            ? `${item.completed_by_first_name} ${item.completed_by_last_name || ''}`.trim()
+                            : '—',
+                },
+            ]
+            : []),
         {
             key: 'date',
             label: 'Date',
@@ -251,6 +263,9 @@ const Listings = () => {
                                 <>
                                     <CDropdownItem as="button" type="button" onClick={() => setAssignModal(item.id)}>
                                         Assign
+                                    </CDropdownItem>
+                                    <CDropdownItem as="button" type="button" onClick={() => handleComplete(item.id)} className="text-success">
+                                        Mark Completed
                                     </CDropdownItem>
                                     <CDropdownItem as="button" type="button" onClick={() => handleCancel(item.id)} className="text-danger">
                                         Cancel
@@ -371,6 +386,19 @@ const Listings = () => {
                                                 </div>
                                             </div>
                                         </div>
+
+                                        {details.completed_by && (
+                                            <div className="col-12">
+                                                <div className="border rounded p-3 bg-body-tertiary">
+                                                    <div className="small">
+                                                        <span className="text-medium-emphasis">Completed by:</span>{' '}
+                                                        <span className="fw-semibold">
+                                                            {`${details.completed_by.first_name || ''} ${details.completed_by.last_name || ''}`.trim() || details.completed_by.email || '—'}
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        )}
 
                                         <div className="col-12">
                                             <div className="border rounded p-3">
